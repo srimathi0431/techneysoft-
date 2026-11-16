@@ -1,0 +1,135 @@
+.ts-navbar {
+  width: 100%;
+  height: 76px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(3, 9, 29, 0.94);
+  border-bottom: 1px solid rgba(70, 125, 255, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.ts-nav-container {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0 3%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1600px) {
+  .ts-nav-container {
+    padding: 0 5%;
+  }
+}
+
+.ts-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.ts-logo-icon {
+  font-size: 27px;
+  font-weight: 900;
+  color: #31b5ff;
+  text-shadow: 0 0 15px #168cff;
+}
+
+.ts-logo-text {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.ts-logo-text small {
+  display: block;
+  margin-top: 3px;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #8c9cbd;
+}
+
+.ts-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.ts-nav-links a {
+  color: #d2d9ed;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.ts-nav-links a:hover,
+.ts-nav-links a.active {
+  color: #b47aff;
+}
+
+.ts-nav-links a.active {
+  padding: 8px 15px;
+  background: linear-gradient(90deg, #793cff, #a13bff);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 18px rgba(137, 66, 255, 0.4);
+}
+
+.ts-nav-links .ts-quote-btn {
+  padding: 11px 19px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(100deg, #813bff, #387cff);
+  box-shadow: 0 0 18px rgba(76, 108, 255, 0.3);
+}
+
+.ts-menu-toggle {
+  display: none;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .ts-navbar {
+    height: 68px;
+  }
+
+  .ts-menu-toggle {
+    display: block;
+  }
+
+  .ts-nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+    background: #07132e;
+    border-bottom: 1px solid rgba(70, 125, 255, 0.2);
+  }
+
+  .ts-nav-links.active {
+    display: flex;
+  }
+
+  .ts-nav-links a {
+    padding: 10px;
+  }
+
+  .ts-nav-links .ts-quote-btn {
+    text-align: center;
+  }
+}

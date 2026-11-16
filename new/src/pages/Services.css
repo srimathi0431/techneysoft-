@@ -1,0 +1,590 @@
+/* SERVICES SECTION */
+.ts-services-section {
+  position: relative;
+  width: 100%;
+  min-height: 820px;
+  padding: 85px 20px 70px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(190, 150, 255, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #f7f2ff, #e9ddff, #f8f5ff);
+  color: #202653;
+}
+
+/* HEADING */
+.ts-services-heading {
+  max-width: 850px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.ts-services-badge {
+  display: inline-block;
+  padding: 8px 19px;
+  border-radius: 30px;
+  background: rgba(143, 65, 245, 0.12);
+  color: #8738ed;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ts-services-heading h2 {
+  margin: 18px 0 12px;
+  color: #202653;
+  font-size: clamp(30px, 4vw, 47px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.ts-services-heading h2 span {
+  background: linear-gradient(90deg, #a12af5, #5c4cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ts-services-heading p {
+  color: #626987;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* CAROUSEL STAGE */
+.ts-carousel-stage {
+  width: 100%;
+  max-width: 1250px;
+  height: 570px;
+  margin: auto;
+  position: relative;
+  perspective: 1500px;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+/* SERVICE CARDS */
+.ts-service-card {
+  position: absolute;
+  width: 390px;
+  height: 510px;
+  top: 25px;
+  left: 50%;
+  padding: 13px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff, #f0eaff);
+  border: 2px solid var(--card-color);
+  box-shadow:
+    0 15px 45px color-mix(in srgb, var(--card-color) 20%, transparent),
+    inset 0 0 15px rgba(255, 255, 255, 0.9);
+  transform:
+    translateX(calc(-50% + var(--position) * 300px))
+    scale(0.82);
+  opacity: 0.42;
+  filter: blur(3px);
+  z-index: 1;
+  cursor: pointer;
+  transition:
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.85s ease,
+    filter 0.85s ease,
+    box-shadow 0.85s ease;
+}
+
+/* CENTER CARD - ACTIVE */
+.ts-service-card.center {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 10;
+  box-shadow:
+    0 25px 65px color-mix(in srgb, var(--card-color) 28%, transparent),
+    0 0 25px color-mix(in srgb, var(--card-color) 18%, transparent),
+    inset 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* SIDE CARDS */
+.ts-service-card.side {
+  opacity: 0.55;
+  filter: blur(3px);
+  z-index: 5;
+}
+
+/* FAR CARDS */
+.ts-service-card.far {
+  opacity: 0.25;
+  filter: blur(7px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* VISUAL AREA - ICON CENTERED */
+.ts-service-visual {
+  position: relative;
+  width: 100%;
+  height: 225px;
+  border-radius: 22px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      color-mix(in srgb, var(--card-color) 35%, white),
+      #dcd1ff 75%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.ts-service-glow {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: var(--card-color);
+  opacity: 0.35;
+  filter: blur(65px);
+}
+
+/* ICON BOX */
+.ts-service-icon-box {
+  position: relative;
+  width: 115px;
+  height: 115px;
+  display: grid;
+  place-items: center;
+  border-radius: 32px;
+  color: #ffffff;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--card-color) 85%, white),
+    var(--card-color)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 15px 35px color-mix(in srgb, var(--card-color) 40%, transparent),
+    inset 0 0 20px rgba(255, 255, 255, 0.25);
+  transition: transform 0.5s ease;
+}
+
+.ts-service-card.center .ts-service-icon-box {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.ts-service-number {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 14px;
+  font-weight: 900;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+/* CONTENT AREA */
+.ts-service-content {
+  padding: 25px 12px 12px;
+}
+
+.ts-service-content h3 {
+  color: #202653;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.ts-service-subtitle {
+  display: block;
+  color: var(--card-color);
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 17px;
+}
+
+.ts-service-content p {
+  color: #626987;
+  font-size: 14px;
+  line-height: 1.8;
+  min-height: 70px;
+}
+
+/* LEARN MORE BUTTON */
+.ts-service-learn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 13px 23px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(100deg, #a52bf5, #624bff);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ts-service-learn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(133, 53, 237, 0.3);
+}
+
+/* MODAL OVERLAY */
+.ts-service-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(24, 18, 48, 0.6);
+  backdrop-filter: blur(12px);
+  animation: tsFadeIn 0.3s ease;
+}
+
+/* MODAL CONTENT */
+.ts-service-modal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 38px;
+  border-radius: 28px;
+  border: 2px solid var(--card-color);
+  background: linear-gradient(145deg, #ffffff, #eee5ff);
+  box-shadow:
+    0 25px 80px rgba(45, 20, 90, 0.25),
+    0 0 30px color-mix(in srgb, var(--card-color) 25%, transparent);
+  animation: tsModalIn 0.4s ease;
+}
+
+.ts-modal-close {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: #eadfff;
+  color: #7135d8;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ts-modal-close:hover {
+  background: #d8c4ff;
+  transform: rotate(90deg);
+}
+
+.ts-modal-icon {
+  margin-bottom: 20px;
+  color: var(--card-color);
+}
+
+.ts-service-modal h2 {
+  margin: 15px 0;
+  color: #202653;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.ts-service-modal > p {
+  color: #626987;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ts-service-modal h4 {
+  margin: 25px 0 15px;
+  color: #202653;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.ts-modal-features {
+  display: grid;
+  gap: 14px;
+}
+
+.ts-modal-features div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #454b70;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ts-modal-features svg {
+  flex-shrink: 0;
+  color: var(--card-color);
+}
+
+.ts-modal-action {
+  width: 100%;
+  margin-top: 28px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #a52af4, #6049ff);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ts-modal-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(133, 42, 244, 0.35);
+}
+
+/* ANIMATIONS */
+@keyframes tsFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tsModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* TABLET RESPONSIVE */
+@media (max-width: 900px) {
+  .ts-carousel-stage {
+    height: 540px;
+  }
+
+  .ts-service-card {
+    width: 340px;
+    height: 490px;
+    transform:
+      translateX(calc(-50% + var(--position) * 235px))
+      scale(0.8);
+  }
+
+  .ts-service-card.center {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .ts-service-visual {
+    height: 210px;
+  }
+
+  .ts-service-icon-box {
+    width: 105px;
+    height: 105px;
+  }
+
+  .ts-service-content h3 {
+    font-size: 24px;
+  }
+
+  .ts-service-content p {
+    font-size: 13px;
+  }
+}
+
+/* MOBILE RESPONSIVE - COMPACT DESIGN */
+@media (max-width: 600px) {
+  .ts-services-section {
+    min-height: 650px;
+    padding: 45px 0 35px;
+    overflow: hidden;
+  }
+
+  .ts-services-heading {
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
+  .ts-services-badge {
+    font-size: 11px;
+    padding: 7px 16px;
+  }
+
+  .ts-services-heading h2 {
+    font-size: 25px;
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+  }
+
+  .ts-services-heading p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .ts-carousel-stage {
+    width: 100%;
+    height: 390px;
+    overflow: visible;
+    position: relative;
+  }
+
+  .ts-service-card {
+    width: 68vw;
+    max-width: 290px;
+    height: 350px;
+    top: 15px;
+    padding: 18px 15px;
+    border-radius: 26px;
+    transform:
+      translateX(calc(-50% + var(--position) * 78%))
+      scale(0.84);
+  }
+
+  /* Center card - sharp and visible */
+  .ts-service-card.center {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    filter: blur(0);
+    z-index: 10;
+  }
+
+  /* Side cards - visible with blur */
+  .ts-service-card.side {
+    opacity: 0.55;
+    filter: blur(3px);
+    z-index: 5;
+  }
+
+  /* Far cards - more blurred */
+  .ts-service-card.far {
+    opacity: 0.25;
+    filter: blur(7px);
+    z-index: 2;
+  }
+
+  .ts-service-visual {
+    height: 145px;
+    border-radius: 18px;
+  }
+
+  .ts-service-icon-box {
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+  }
+
+  .ts-service-icon-box svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .ts-service-number {
+    font-size: 11px;
+    top: 12px;
+    right: 15px;
+  }
+
+  .ts-service-content {
+    padding: 18px 8px 10px;
+  }
+
+  .ts-service-content h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .ts-service-subtitle {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .ts-service-content p {
+    font-size: 11px;
+    line-height: 1.6;
+    min-height: 55px;
+  }
+
+  .ts-service-learn {
+    margin-top: 10px;
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+
+  /* Modal adjustments */
+  .ts-service-modal {
+    padding: 28px 21px;
+    border-radius: 23px;
+  }
+
+  .ts-service-modal h2 {
+    font-size: 22px;
+  }
+
+  .ts-service-modal > p {
+    font-size: 13px;
+  }
+
+  .ts-modal-features div {
+    font-size: 13px;
+  }
+
+  .ts-modal-action {
+    font-size: 14px;
+  }
+}
+
+/* EXTRA SMALL MOBILE */
+@media (max-width: 360px) {
+  .ts-service-card {
+    width: 86vw;
+  }
+
+  .ts-service-content h3 {
+    font-size: 19px;
+  }
+
+  .ts-service-content p {
+    font-size: 11px;
+  }
+
+  .ts-service-learn {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .ts-service-card,
+  .ts-service-icon-box,
+  .ts-service-learn,
+  .ts-modal-close,
+  .ts-modal-action {
+    transition: none;
+  }
+
+  .ts-service-overlay,
+  .ts-service-modal {
+    animation: none;
+  }
+}
