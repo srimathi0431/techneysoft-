@@ -8,17 +8,21 @@ export default function Navbar() {
 
   const scrollToSection = (sectionId) => {
     closeMenu();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbarHeight = 76;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+    
+    // Use requestAnimationFrame for smoother scroll
+    requestAnimationFrame(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const navbarHeight = 60;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
   };
 
   return (
@@ -32,7 +36,7 @@ export default function Navbar() {
             scrollToSection('home');
           }}
         >
-          <span className="ts-logo-icon">TS</span>
+          <img src="/image/logo.png" alt="Techneysoft Logo" className="ts-logo-image" />
           <span className="ts-logo-text">
             TECHNEYSOFT
             <small>TECHNOLOGY SOLUTIONS</small>
@@ -76,6 +80,15 @@ export default function Navbar() {
             Services
           </a>
           <a
+            href="#solutions"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('solutions');
+            }}
+          >
+            Solutions
+          </a>
+          <a
             href="#technologies"
             onClick={(e) => {
               e.preventDefault();
@@ -101,15 +114,6 @@ export default function Navbar() {
             }}
           >
             Process
-          </a>
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('projects');
-            }}
-          >
-            Projects
           </a>
           <a
             href="#contact"
